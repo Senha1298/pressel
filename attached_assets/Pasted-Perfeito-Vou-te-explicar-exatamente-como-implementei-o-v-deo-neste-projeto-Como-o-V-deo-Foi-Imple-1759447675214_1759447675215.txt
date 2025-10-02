@@ -1,0 +1,50 @@
+Perfeito! Vou te explicar exatamente como implementei o vídeo neste projeto:
+
+Como o Vídeo Foi Implementado
+NÃO adicionei no index.html, mas sim criei um componente React (VideoSection.tsx) que faz o seguinte:
+
+1. Carrega o Script Dinamicamente (useEffect)
+useEffect(() => {
+  // Verifica se o script já existe
+  const existingScript = document.querySelector('script[src*="converteai.net"]');
+  if (!existingScript) {
+    // Cria o elemento script
+    const s = document.createElement("script");
+    s.src = "https://scripts.converteai.net/7f004cb4-ff4b-48f5-8be2-7f09adfd539d/players/68daaf50aac00b46e24fb98c/v4/player.js";
+    s.async = true;
+    document.head.appendChild(s); // Adiciona no head
+  }
+}, []);
+2. Renderiza o Player usando dangerouslySetInnerHTML
+<div 
+  dangerouslySetInnerHTML={{
+    __html: '<vturb-smartplayer id="vid-68daaf50aac00b46e24fb98c" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>'
+  }}
+/>
+Por que funciona assim?
+✅ Script carrega primeiro (no useEffect) antes de renderizar o player
+✅ Não duplica - Verifica se já existe antes de adicionar
+✅ HTML customizado - dangerouslySetInnerHTML permite usar elementos customizados como <vturb-smartplayer>
+✅ Funciona em React - Compatível com SPA (Single Page Application)
+Para usar no seu outro projeto:
+Opção 1: Se for React/Vite (igual a este):
+
+Copie o componente VideoSection.tsx
+Importe onde quiser usar: <VideoSection />
+Opção 2: Se for HTML puro:
+Adicione no <body>, na ordem correta:
+
+<!-- 1. Primeiro o elemento do player -->
+<vturb-smartplayer id="vid-68daaf50aac00b46e24fb98c" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
+<!-- 2. DEPOIS o script (no final do body) -->
+<script type="text/javascript">
+  var s=document.createElement("script");
+  s.src="https://scripts.converteai.net/7f004cb4-ff4b-48f5-8be2-7f09adfd539d/players/68daaf50aac00b46e24fb98c/v4/player.js";
+  s.async=true;
+  document.head.appendChild(s);
+</script>
+Dica importante: Se só está tocando áudio, provavelmente o script não está carregando corretamente. Tente:
+
+Abrir o console (F12) e ver se há erros
+Verificar se o script carrega antes do elemento <vturb-smartplayer>
+Usar s.async=false para carregar de forma síncrona

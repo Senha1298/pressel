@@ -1,27 +1,19 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [cepValue, setCepValue] = useState('');
   const [isContinueEnabled, setIsContinueEnabled] = useState(false);
-  const videoContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (videoContainerRef.current) {
-      // Insert the player container and element
-      const playerHTML = `<div style="width: 100%; max-width: 600px; min-height: 337px; margin: 0 auto; background: #000;"><vturb-smartplayer id="vid-68daaf50aac00b46e24fb98c" style="width: 100%; min-height: 337px; display: block;"></vturb-smartplayer></div>`;
-      videoContainerRef.current.innerHTML = playerHTML;
-      
-      // Load the SmartPlayer script
-      const existingScript = document.querySelector('script[src="https://scripts.converteai.net/7f004cb4-ff4b-48f5-8be2-7f09adfd539d/players/68daaf50aac00b46e24fb98c/v4/player.js"]');
-      if (existingScript) {
-        existingScript.remove();
-      }
-      
-      const script = document.createElement('script');
-      script.src = 'https://scripts.converteai.net/7f004cb4-ff4b-48f5-8be2-7f09adfd539d/players/68daaf50aac00b46e24fb98c/v4/player.js';
-      script.async = true;
-      document.head.appendChild(script);
+    // Verifica se o script já existe
+    const existingScript = document.querySelector('script[src*="converteai.net"]');
+    if (!existingScript) {
+      // Cria o elemento script
+      const s = document.createElement("script");
+      s.src = "https://scripts.converteai.net/7f004cb4-ff4b-48f5-8be2-7f09adfd539d/players/68daaf50aac00b46e24fb98c/v4/player.js";
+      s.async = true;
+      document.head.appendChild(s);
     }
   }, []);
 
@@ -366,7 +358,11 @@ export default function Home() {
             <div className="main-text">
               Seja um Entregador Parceiro e faça parte da nossa Empresa:
             </div>
-            <div ref={videoContainerRef}></div>
+            <div 
+              dangerouslySetInnerHTML={{
+                __html: '<vturb-smartplayer id="vid-68daaf50aac00b46e24fb98c" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>'
+              }}
+            />
           </div>
         </div>
       </div>
