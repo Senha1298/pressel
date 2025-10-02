@@ -431,7 +431,7 @@ export default function Home() {
 
       <footer className="footer">
         <p>&copy; 2025 Cadastro de Entregadores. Todos os direitos reservados.</p>
-        <p>CNPJ: 60.123.871/0001-24 | Suporte: +1 555 837 3106</p>
+        <p style={{ fontSize: '12px', marginTop: '4px' }}>CNPJ: 60.123.871/0001-24 | Suporte: +1 555 837 3106</p>
       </footer>
 
       {isModalOpen && (
