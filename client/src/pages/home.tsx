@@ -134,7 +134,7 @@ export default function Home() {
         }
         .orange-background {
           background: #f94f1c;
-          padding-bottom: 8px;
+          padding-bottom: 0;
         }
         .main-banner-box {
           width: 100%;
