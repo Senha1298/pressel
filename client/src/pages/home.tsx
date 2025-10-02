@@ -134,7 +134,7 @@ export default function Home() {
         }
         .orange-background {
           background: #f94f1c;
-          padding-bottom: 20px;
+          padding-bottom: 8px;
         }
         .main-banner-box {
           width: 100%;
@@ -161,7 +161,7 @@ export default function Home() {
           color: #fff;
           font-size: 26px;
           font-weight: 700;
-          margin: 48px 0 24px 0;
+          margin: 48px 0 12px 0;
           padding: 0 16px 0 16px;
           line-height: 1.25;
           text-align: center;
@@ -358,11 +358,13 @@ export default function Home() {
             <div className="main-text">
               Seja um Entregador Parceiro e faça parte da nossa Empresa:
             </div>
-            <div 
-              dangerouslySetInnerHTML={{
-                __html: '<vturb-smartplayer id="vid-68daaf50aac00b46e24fb98c" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>'
-              }}
-            />
+            <div style={{ width: '100%', maxWidth: '600px', margin: '0 auto' }}>
+              <div 
+                dangerouslySetInnerHTML={{
+                  __html: '<vturb-smartplayer id="vid-68daaf50aac00b46e24fb98c" style="display: block; width: 100%; min-height: 338px;"></vturb-smartplayer>'
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
