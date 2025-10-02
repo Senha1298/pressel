@@ -358,10 +358,10 @@ export default function Home() {
             <div className="main-text">
               Seja um Entregador Parceiro e faça parte da nossa Empresa:
             </div>
-            <div style={{ width: '100%', maxWidth: '600px', margin: '0 auto' }}>
+            <div style={{ width: '100%', maxWidth: '600px', margin: '0 auto', aspectRatio: '16/9' }}>
               <div 
                 dangerouslySetInnerHTML={{
-                  __html: '<vturb-smartplayer id="vid-68daaf50aac00b46e24fb98c" style="display: block; width: 100%; min-height: 338px;"></vturb-smartplayer>'
+                  __html: '<vturb-smartplayer id="vid-68daaf50aac00b46e24fb98c" style="display: block; width: 100%; height: 100%;"></vturb-smartplayer>'
                 }}
               />
             </div>
