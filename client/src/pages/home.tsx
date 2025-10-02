@@ -44,10 +44,27 @@ export default function Home() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Enviar evento para Google Analytics
+    const gtag = (window as any).gtag;
+    if (gtag) {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17372990053',
+        'event_category': 'cadastro',
+        'event_label': 'whatsapp_click'
+      });
+    }
+    
+    // Abrir WhatsApp com mensagem
+    const phoneNumber = '15558373106';
+    const message = encodeURIComponent('Olá, desejo realizar meu cadastro como entregador.');
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    
+    window.open(whatsappUrl, '_blank');
+    
     setIsModalOpen(false);
     setCepValue('');
     setIsContinueEnabled(false);
-    alert('CEP enviado com sucesso!');
   };
 
   const openModal = () => {
