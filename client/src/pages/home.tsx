@@ -455,7 +455,7 @@ export default function Home() {
                 name="cep"
                 type="text"
                 inputMode="numeric"
-                pattern="[0-9]*"
+                pattern="\d{5}-\d{3}"
                 maxLength={9}
                 className="w-full border border-gray-300 rounded-[6px] px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
                 placeholder="00000-000"
