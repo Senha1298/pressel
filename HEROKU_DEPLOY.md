@@ -25,7 +25,10 @@ heroku buildpacks:set heroku/nodejs
 ### 4. Configurar variáveis de ambiente
 ```bash
 heroku config:set NODE_ENV=production
+heroku config:set NPM_CONFIG_PRODUCTION=false
 ```
+
+**Importante**: `NPM_CONFIG_PRODUCTION=false` garante que as devDependencies sejam instaladas durante o build (necessário para vite e esbuild)
 
 ### 5. Deploy
 ```bash

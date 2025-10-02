@@ -1,0 +1,13 @@
+Application Logs
+2025-10-02T23:57:11.483972+00:00 app[web.1]:     at ModuleJob._link (node:internal/modules/esm/module_job:183:49) {
+2025-10-02T23:57:11.483973+00:00 app[web.1]:   code: 'ERR_MODULE_NOT_FOUND'
+2025-10-02T23:57:11.483973+00:00 app[web.1]: }
+2025-10-02T23:57:11.483974+00:00 app[web.1]: 
+2025-10-02T23:57:11.483974+00:00 app[web.1]: Node.js v22.20.0
+2025-10-02T23:57:11.568660+00:00 heroku[web.1]: Process exited with status 1
+2025-10-02T23:57:11.592338+00:00 heroku[web.1]: State changed from starting to crashed
+2025-10-02T23:57:12.538973+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=pressel-3a87f6e6111d.herokuapp.com request_id=00d4e6ed-bae7-2b46-e6b7-465ada2b1baa fwd="" dyno= connect=0ms service=0ms status=503 bytes=567 protocol=http1.1 tls=true tls_version=unknown
+2025-10-02T23:57:16.966921+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=pressel-3a87f6e6111d.herokuapp.com request_id=37f32e6b-e4b0-32de-1c0d-c1f434ce751a fwd="" dyno= connect=0ms service=0ms status=503 bytes=567 protocol=http1.1 tls=true tls_version=unknown
+2025-10-02T23:57:20.549168+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=pressel-3a87f6e6111d.herokuapp.com request_id=d967e30b-8a6a-5793-00c7-e2b98e2a105a fwd="" dyno= connect=0ms service=0ms status=503 bytes=567 protocol=http1.1 tls=true tls_version=unknown
+2025-10-02T23:57:24.800951+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=pressel-3a87f6e6111d.herokuapp.com request_id=185640ad-1b88-4d1c-73d3-0e184aa81a28 fwd="" dyno= connect=0ms service=0ms status=503 bytes=567 protocol=http1.1 tls=true tls_version=unknown
+2025-10-02T23:57:26.278679+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=pressel-3a87f6e6111d.herokuapp.com request_id=2bfb8ba6-aacb-9a9f-71df-233395717a94 fwd="" dyno= connect=0ms service=0ms status=503 bytes=567 protocol=http1.1 tls=true tls_version=unknown
