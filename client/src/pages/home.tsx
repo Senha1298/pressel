@@ -6,17 +6,17 @@ export default function Home() {
   const [isContinueEnabled, setIsContinueEnabled] = useState(false);
 
   useEffect(() => {
-    if (isModalOpen) {
-      const script = document.createElement('script');
-      script.src = 'https://scripts.converteai.net/7f004cb4-ff4b-48f5-8be2-7f09adfd539d/players/68daaf50aac00b46e24fb98c/v4/player.js';
-      script.async = true;
-      document.head.appendChild(script);
-      
-      return () => {
+    const script = document.createElement('script');
+    script.src = 'https://scripts.converteai.net/7f004cb4-ff4b-48f5-8be2-7f09adfd539d/players/68daaf50aac00b46e24fb98c/v4/player.js';
+    script.async = true;
+    document.head.appendChild(script);
+    
+    return () => {
+      if (document.head.contains(script)) {
         document.head.removeChild(script);
-      };
-    }
-  }, [isModalOpen]);
+      }
+    };
+  }, []);
 
   const formatCep = (value: string) => {
     value = value.replace(/\D/g, '');
@@ -370,7 +370,7 @@ export default function Home() {
             </div>
             <div 
               dangerouslySetInnerHTML={{
-                __html: `<vturb-smartplayer id="vid-68daaf50aac00b46e24fb98c" style="display: block; margin: 0 auto; width: 100%; border-radius: 0px; overflow: hidden;"></vturb-smartplayer><script type="text/javascript">var s=document.createElement("script"); s.src="https://scripts.converteai.net/7f004cb4-ff4b-48f5-8be2-7f09adfd539d/players/68daaf50aac00b46e24fb98c/v4/player.js", s.async=!0,document.head.appendChild(s);</script>`
+                __html: `<vturb-smartplayer id="vid-68daaf50aac00b46e24fb98c" style="display: block; margin: 0 auto; width: 100%; border-radius: 0px; overflow: hidden;"></vturb-smartplayer>`
               }}
             />
           </div>
