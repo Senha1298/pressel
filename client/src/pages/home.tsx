@@ -7,32 +7,21 @@ export default function Home() {
   const videoContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log('useEffect running, ref:', videoContainerRef.current);
-    
     if (videoContainerRef.current) {
-      // First, insert the placeholder element
-      const playerHTML = `<vturb-smartplayer id="vid-68daaf50aac00b46e24fb98c" style="display: block; margin: 0 auto; width: 100%; border-radius: 0px; overflow: hidden;"></vturb-smartplayer>`;
+      // Insert the player container and element
+      const playerHTML = `<div style="width: 100%; max-width: 600px; min-height: 337px; margin: 0 auto; background: #000;"><vturb-smartplayer id="vid-68daaf50aac00b46e24fb98c" style="width: 100%; min-height: 337px; display: block;"></vturb-smartplayer></div>`;
       videoContainerRef.current.innerHTML = playerHTML;
-      console.log('Player HTML inserted');
       
-      // Remove existing script to force reload
+      // Load the SmartPlayer script
       const existingScript = document.querySelector('script[src="https://scripts.converteai.net/7f004cb4-ff4b-48f5-8be2-7f09adfd539d/players/68daaf50aac00b46e24fb98c/v4/player.js"]');
       if (existingScript) {
-        console.log('Removing existing SmartPlayer script');
         existingScript.remove();
       }
       
-      // Load the script
-      console.log('Loading SmartPlayer script...');
       const script = document.createElement('script');
       script.src = 'https://scripts.converteai.net/7f004cb4-ff4b-48f5-8be2-7f09adfd539d/players/68daaf50aac00b46e24fb98c/v4/player.js';
       script.async = true;
-      script.type = 'text/javascript';
-      script.onload = () => console.log('SmartPlayer script loaded');
-      script.onerror = (e) => console.error('SmartPlayer script failed to load', e);
       document.head.appendChild(script);
-    } else {
-      console.log('videoContainerRef.current is null');
     }
   }, []);
 
@@ -185,36 +174,14 @@ export default function Home() {
           line-height: 1.25;
           text-align: center;
         }
-        .main-banner-inner vturb-smartplayer {
-          width: 100% !important;
-          max-width: 600px;
-          display: block !important;
-          margin: 0 auto 0 auto;
-          border-radius: 0px !important;
-          overflow: visible !important;
-          box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-          background: #000;
-          min-height: 337px !important;
-          height: auto !important;
+        vturb-smartplayer {
+          width: 100%;
+          height: 100%;
+          display: block;
         }
-        vturb-smartplayer,
-        vturb-smartplayer *,
-        vturb-smartplayer iframe,
-        vturb-smartplayer video,
-        vturb-smartplayer > div,
-        vturb-smartplayer .vjs-tech,
-        vturb-smartplayer .vjs-poster {
-          border-radius: 0px !important;
-          overflow: visible !important;
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-        }
-        vturb-smartplayer video,
-        vturb-smartplayer iframe {
-          width: 100% !important;
-          height: 100% !important;
-          min-height: 337px !important;
+        vturb-smartplayer > * {
+          width: 100%;
+          height: 100%;
         }
         .app-section {
           background: #fff;
