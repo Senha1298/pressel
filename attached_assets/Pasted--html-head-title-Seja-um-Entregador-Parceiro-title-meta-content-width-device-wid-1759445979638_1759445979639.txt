@@ -1,0 +1,448 @@
+<html>
+<head>
+  <title>
+    Seja um Entregador Parceiro
+  </title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #fff;
+      color: #333;
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0 0 0 10px;
+      height: 70px !important;
+      min-height: 70px !important;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .header .back-arrow {
+      color: #ff5722;
+      font-size: 24px;
+      margin-right: 12px;
+      margin-top: 2px;
+    }
+    .header .title {
+      font-size: 22px; /* Diminuído de 26px para 22px */
+      font-weight: 400;
+      color: #222;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+      letter-spacing: -0.5px;
+    }
+    .header .share {
+      color: #ff5722;
+      font-size: 24px;
+      margin-right: 18px;
+      margin-left: 10px;
+      margin-top: 2px;
+    }
+    .orange-background {
+      background: #f94f1c;
+      padding-bottom: 20px;
+    }
+    .main-banner-box {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding-top: 20px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .main-banner-inner {
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+    }
+    .main-banner-inner .main-text {
+      color: #fff;
+      font-size: 26px;
+      font-weight: 700;
+      margin: 48px 0 24px 0;
+      padding: 0 16px 0 16px;
+      line-height: 1.25;
+      text-align: center;
+    }
+    .main-banner-inner vturb-smartplayer {
+      width: 100% !important;
+      max-width: 600px;
+      display: block;
+      margin: 0 auto 0 auto;
+      border-radius: 0px !important;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+      background: #000;
+    }
+    vturb-smartplayer iframe,
+    vturb-smartplayer video,
+    vturb-smartplayer > div,
+    vturb-smartplayer .vjs-tech,
+    vturb-smartplayer .vjs-poster {
+      border-radius: 0px !important;
+      overflow: hidden !important;
+    }
+    .app-section {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    .app-section-inner {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .cadastro-btn-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 32px 0 0 0;
+    }
+    .cadastro-btn {
+      background: linear-gradient(180deg, #34d058 0%, #228c3a 100%);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 18px 48px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 0 #17692a, 0 1px 6px rgba(0,0,0,0.10);
+      cursor: pointer;
+      transition: transform 0.1s, box-shadow 0.1s;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+      letter-spacing: 0.5px;
+      outline: none;
+      position: relative;
+    }
+    .cadastro-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 #17692a, 0 1px 6px rgba(0,0,0,0.10);
+    }
+    .requirements-section {
+      background: #ff7a1a;
+      border-radius: 18px;
+      margin: 32px 16px 32px 16px;
+      padding: 28px 22px 32px 22px;
+      color: #fff;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 15px; /* Diminuído de 17px para 15px */
+      box-sizing: border-box;
+      position: relative;
+      z-index: 1;
+    }
+    .requirements-section ul {
+      padding-left: 20px;
+      margin: 0;
+      list-style: none;
+    }
+    .requirements-section ul li {
+      margin-bottom: 14px;
+      position: relative;
+      padding-left: 22px;
+      font-size: 14px; /* Diminuído de 16px para 14px */
+      line-height: 1.45;
+    }
+    .requirements-section ul li:before {
+      content: '\f00c';
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      color: #fff;
+      font-size: 14px;
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 32px;
+      right: 24px;
+      width: 64px;
+      height: 64px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: box-shadow 0.2s;
+    }
+    .scroll-top-btn:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+    .scroll-top-btn .fa-arrow-up {
+      color: #ff7a1a;
+      font-size: 32px;
+    }
+    .footer {
+      background-color: #F54E1C;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: auto;
+    }
+    @media (max-width: 900px) {
+      .main-banner-box {
+        padding-top: 10px;
+      }
+      .main-banner-inner .main-text {
+        font-size: 20px;
+        margin-top: 32px;
+      }
+      .app-section-inner {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 0;
+      }
+      .cadastro-btn {
+        font-size: 18px;
+        padding: 14px 32px;
+      }
+      .requirements-section {
+        margin: 32px 8px 32px 8px;
+        padding: 22px 10px 28px 10px;
+      }
+    }
+    @media (max-width: 600px) {
+      .main-banner-box {
+        padding-top: 5px;
+      }
+      .main-banner-inner .main-text {
+        font-size: 17px;
+        padding: 0 6px 0 6px;
+        margin-top: 24px;
+      }
+      .cadastro-btn {
+        font-size: 16px;
+        padding: 12px 18px;
+      }
+      .requirements-section {
+        font-size: 14px; /* Diminuído de 15px para 14px */
+        padding: 16px 4px 18px 4px;
+      }
+      .requirements-section .req-title {
+        font-size: 16px; /* Diminuído de 17px para 16px */
+      }
+      .header .title {
+        font-size: 18px; /* Diminuído de 20px para 18px */
+      }
+      .scroll-top-btn {
+        width: 48px;
+        height: 48px;
+      }
+      .scroll-top-btn .fa-arrow-up {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header" style="">
+    <i class="fas fa-arrow-left back-arrow"></i>
+    <span class="title">
+      Seja um Entregador Parceiro
+    </span>
+    <i class="fas fa-share share"></i>
+  </div>
+  <div class="orange-background">
+    <div class="main-banner-box">
+      <div class="main-banner-inner">
+        <div class="main-text" style="">
+          Seja um Entregador Parceiro e faça parte da nossa Empresa:
+        </div>
+        <vturb-smartplayer id="vid-68daaf50aac00b46e24fb98c" style="display: block; margin: 0 auto; width: 100%; border-radius: 0px; overflow: hidden;">
+        </vturb-smartplayer>
+        <script type="text/javascript">
+          var s=document.createElement("script"); s.src="https://scripts.converteai.net/7f004cb4-ff4b-48f5-8be2-7f09adfd539d/players/68daaf50aac00b46e24fb98c/v4/player.js", s.async=!0,document.head.appendChild(s);
+        </script>
+      </div>
+    </div>
+  </div>
+  <div class="app-section">
+    <div class="app-section-inner">
+      <div class="cadastro-btn-wrapper">
+        <button class="cadastro-btn" id="openModalBtn">Realizar Cadastro</button>
+      </div>
+    </div>
+  </div>
+  <div class="requirements-section">
+    <ul>
+      <li>
+        Você recebe as rotas de entrega diretamente pelo aplicativo, com todas as informações necessárias para realizar as entregas do dia.
+      </li>
+      <li>
+        As coletas e entregas são feitas em pontos definidos, otimizando o tempo e facilitando o trajeto.
+      </li>
+      <li>
+        O pagamento é realizado diariamente, de acordo com as entregas concluídas.
+      </li>
+      <li>
+        Você pode escolher os dias e horários em que deseja trabalhar, tendo flexibilidade para montar sua própria rotina.
+      </li>
+      <li>
+        O suporte está disponível para ajudar em caso de dúvidas ou imprevistos durante as entregas.
+      </li>
+      <li>
+        O aplicativo mostra o histórico de entregas, ganhos e avaliações, permitindo acompanhar seu desempenho.
+      </li>
+      <li>
+        As entregas podem ser feitas em diferentes tipos de veículos, de acordo com a sua disponibilidade e preferência.
+      </li>
+      <li>
+        O processo de entrega é simples: basta aceitar a rota, coletar os pacotes e realizar as entregas nos endereços indicados.
+      </li>
+    </ul>
+  </div>
+  <button class="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'});">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  <footer class="footer">
+    <p>&copy; 2025 Cadastro de Entregadores. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modalCadastro" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden">
+    <div class="bg-white rounded-[6px] shadow-lg w-full max-w-md mx-4 p-6 relative">
+      <button id="closeModalBtn" class="absolute top-3 right-3 text-gray-400 hover:text-gray-700 text-2xl focus:outline-none">
+        <i class="fas fa-times"></i>
+      </button>
+      <h2 class="text-xl font-bold text-gray-800 mb-4 text-center">Digite seu CEP</h2>
+      <form id="cepForm" autocomplete="off">
+        <label for="cepInput" class="block text-gray-700 text-base mb-2">CEP</label>
+        <input
+          id="cepInput"
+          name="cep"
+          type="text"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          maxlength="9"
+          class="w-full border border-gray-300 rounded-[6px] px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
+          placeholder="00000-000"
+          autocomplete="postal-code"
+        />
+        <button
+          id="continuarBtn"
+          type="submit"
+          class="w-full mt-6 py-3 rounded-[6px] bg-orange-500 text-white font-bold text-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled
+        >
+          Continuar
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Modal open/close
+    const openModalBtn = document.getElementById('openModalBtn');
+    const modalCadastro = document.getElementById('modalCadastro');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const cepInput = document.getElementById('cepInput');
+    const continuarBtn = document.getElementById('continuarBtn');
+    const cepForm = document.getElementById('cepForm');
+
+    openModalBtn.addEventListener('click', function() {
+      modalCadastro.classList.remove('hidden');
+      setTimeout(() => {
+        cepInput.focus();
+      }, 100);
+    });
+
+    closeModalBtn.addEventListener('click', function() {
+      modalCadastro.classList.add('hidden');
+      cepInput.value = '';
+      continuarBtn.disabled = true;
+    });
+
+    // Fechar modal ao clicar fora
+    modalCadastro.addEventListener('mousedown', function(e) {
+      if (e.target === modalCadastro) {
+        modalCadastro.classList.add('hidden');
+        cepInput.value = '';
+        continuarBtn.disabled = true;
+      }
+    });
+
+    // CEP mask and validation
+    function formatCep(value) {
+      value = value.replace(/\D/g, '');
+      if (value.length > 5) {
+        value = value.slice(0,5) + '-' + value.slice(5,8);
+      }
+      return value.slice(0,9);
+    }
+
+    function isValidCep(value) {
+      return /^\d{5}-\d{3}$/.test(value);
+    }
+
+    cepInput.addEventListener('input', function(e) {
+      let value = e.target.value;
+      value = formatCep(value);
+      e.target.value = value;
+      continuarBtn.disabled = !isValidCep(value);
+    });
+
+    // Prevent non-numeric input
+    cepInput.addEventListener('keypress', function(e) {
+      if (!/[0-9]/.test(e.key)) {
+        e.preventDefault();
+      }
+    });
+
+    // Prevent form submit (for demo)
+    cepForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Aqui você pode adicionar a lógica de envio do CEP
+      modalCadastro.classList.add('hidden');
+      cepInput.value = '';
+      continuarBtn.disabled = true;
+      alert('CEP enviado com sucesso!');
+    });
+  </script>
+</body>
+</html>
