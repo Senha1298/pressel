@@ -56,7 +56,7 @@ export default function Home() {
     }
     
     // Abrir WhatsApp com mensagem
-    const phoneNumber = '15558373106';
+    const phoneNumber = '15558332827';
     const message = encodeURIComponent('Olá, desejo realizar meu cadastro como entregador.');
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     
